@@ -51,7 +51,7 @@ def multiply(a, b):
 
 def divide(a, b):   # raise ZeroDivisionError if a == 0
     try:
-        result = a/b
+        result = b/a
         return result
     except:
         ZeroDivisionError
