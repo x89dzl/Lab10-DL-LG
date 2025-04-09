@@ -5,20 +5,16 @@ calculator.py
 
 One function per operation, in order.
 """
-# First example
-
 def square_root(a): #raise ValueError if a < 0
     if a<0:
-        raise ValueError
+        raise ValueError("A cannot be smaller than 0")
     return math.sqrt(a)
+
 def hypotenuse(a, b): #can have negative nums
     return math.hypot(a, b)
 
 def add(a, b):
     return a + b
-
-def sub(a, b):
-    return a - b
 
 def mul(a, b):
     return a * b
@@ -28,46 +24,19 @@ def div(a, b):
         raise ZeroDivisionError
     return b / a
 
-def log(a, b):
-    if a <= 0 or b <= 0:
-        raise ValueError("both the base and the x must be positive")
-    return math.log(b, a)
-
 def exp(a, b):
     if b == 0 and a == 0:
         raise ValueError("really bro don't do that")
     return a ** b
 
-
-
-def add(a, b):
-    return a + b
-
 def subtract(a, b):
     return a - b
 
-def multiply(a, b):
-    return a * b
-
-def divide(a, b):   # raise ZeroDivisionError if a == 0
-    try:
-        result = b/a
-        return result
-    except:
-        ZeroDivisionError
-        return "Zero Division Error: Cannot Divide by 0"
 def logarithm(a, b): # use math library + try/catch
     try:
-        result = math.log(a,b)
-    except:
-        b=1
-        result = 0
-        a>=0
-        a!=1
-def exponent(a, b): # use math library + try/catch
-    try:
-        return a**b
-    except:
-        a=0
-        b=0
-        return "cannot raise 0 to 0th power"
+        math.log(a,b)
+    except a>=0:
+        raise ValueError("A must be larger than or equal to 0")
+    except a!=1:
+        raise ValueError("A cannot equal 1")
+    '''except b=1:'''
