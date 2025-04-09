@@ -4,18 +4,26 @@ from calculator import *
 class TestCalculator(unittest.TestCase):
     # Partner 2
     def test_add(self): # 3 assertions
-        pass
+        self.assertEqual(add(3, 4), 7)
+        self.assertEqual(add(-3, -4), -7)
+        self.assertEqual(add(-3, 4), 1)
 
     def test_subtract(self): # 3 assertions
-        pass
+        self.assertEqual(sub(5, 5), 0)
+        self.assertEqual(sub(-5, -5), 0)
+        self.assertEqual(sub(-5, -4), -1)
     ##########################
 
     # Partner 1
     def test_multiply(self): # 3 assertions
-        pass
+        self.assertEqual(mul(0, 0), 0)
+        self.assertEqual(mul(0, 1), 0)
+        self.assertEqual(mul(2, 2), 4)
+        self.assertEqual(mul(2, -1), -2)
 
     def test_divide(self): # 3 assertions
-        pass
+        self.assertEqual(div(5, 10), 2)
+        self.assertEqual(div(-5, 10), -2)
     ##########################
 
     # Partner 2
