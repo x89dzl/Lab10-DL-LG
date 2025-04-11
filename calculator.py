@@ -1,3 +1,5 @@
+'''https://github.com/x89dzl/Lab10-DL-LG
+Daniel Li Liam Gale'''
 import math
 """
 calculator.py

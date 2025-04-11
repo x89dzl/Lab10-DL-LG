@@ -1,3 +1,5 @@
+'''https://github.com/x89dzl/Lab10-DL-LG
+Daniel Li Liam Gale'''
 import unittest
 from calculator import *
 
@@ -9,9 +11,9 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(add(-3, 4), 1)
 
     def test_subtract(self): # 3 assertions
-        self.assertEqual(sub(5, 5), 0)
-        self.assertEqual(sub(-5, -5), 0)
-        self.assertEqual(sub(-5, -4), -1)
+        self.assertEqual(subtract(5, 5), 0)
+        self.assertEqual(subtract(-5, -5), 0)
+        self.assertEqual(subtract(-5, -4), -1)
     ##########################
 
     # Partner 1
@@ -28,25 +30,19 @@ class TestCalculator(unittest.TestCase):
 
     # Partner 2
     def test_divide_by_zero(self): # 1 assertion
-        # call division function inside, example:
-        # with self.assertRaises(<INSERT_ERROR_TYPE>):
-        #     div(0, 5)
-        pass
+        self.assertRaises(div(0, 5),ZeroDivisionError)
 
     def test_logarithm(self): # 3 assertions
-        pass
+        self.assertEqual(logarithm(math.e, 1), 0)
 
     def test_log_invalid_base(self): # 1 assertion
-        # use same technique from test_divide_by_zero
-        pass
+        self.assertRaises(logarithm(0,-1), ValueError("A must be larger than or equal to 0"))
+
     ##########################
-    
+print(logarithm(0,5))
     # Partner 1
     def test_log_invalid_argument(self): # 1 assertion
-        # call log function inside, example:
-        # with self.assertRaises(<INSERT_ERROR_TYPE>):
-        #     logarithm(0, 5)
-        pass
+        self.assertRaises(logarithm(5, 8),ValueError("A cannot equal 0"))
 
     def test_hypotenuse(self): # 3 assertions
         pass
@@ -56,9 +52,9 @@ class TestCalculator(unittest.TestCase):
         # with self.assertRaises(<INSERT_ERROR_TYPE>):
         #    square_root(NUM)
         # Test basic function
-        pass
-    ##########################
+        self.assertRaises(square_root(-9),ValueError("A cannot be smaller than 0"))
 
+##########################
 # Do not touch this
 if __name__ == "__main__":
     unittest.main()
