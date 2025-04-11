@@ -39,7 +39,6 @@ class TestCalculator(unittest.TestCase):
         self.assertRaises(logarithm(0,-1), ValueError("A must be larger than or equal to 0"))
 
     ##########################
-print(logarithm(0,5))
     # Partner 1
     def test_log_invalid_argument(self): # 1 assertion
         self.assertRaises(logarithm(5, 8),ValueError("A cannot equal 0"))
@@ -50,7 +49,7 @@ print(logarithm(0,5))
     def test_sqrt(self): # 3 assertions
         # Test for invalid argument, example:
         # with self.assertRaises(<INSERT_ERROR_TYPE>):
-        #    square_root(NUM)
+        # square_root(NUM)
         # Test basic function
         self.assertRaises(square_root(-9),ValueError("A cannot be smaller than 0"))
 
