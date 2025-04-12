@@ -33,7 +33,7 @@ class TestCalculator(unittest.TestCase):
     def test_divide_by_zero(self): # 1 assertion
         self.assertEqual(div(0, 5),"Error cannot divide by 0")
     def test_logarithm(self): # 3 assertions
-        self.assertAlmostEqual(logarithm(math.e,0),1)
+        self.assertEqual(logarithm(math.e,1),0)
         self.assertEqual(logarithm(10,1),0)
         self.assertEqual(logarithm(math.e,math.e),1)
     def test_log_invalid_base(self): # 1 assertion
