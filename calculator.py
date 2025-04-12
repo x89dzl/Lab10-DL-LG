@@ -9,7 +9,7 @@ One function per operation, in order.
 """
 def square_root(a): #raise ValueError if a < 0
     if a<0:
-        raise ValueError("A cannot be smaller than 0")
+        raise ValueError ("A cannot be smaller than 0")
     return math.sqrt(a)
 
 def hypotenuse(a, b): #can have negative nums
@@ -35,11 +35,16 @@ def subtract(a, b):
     return a - b
 
 def logarithm(a, b): # use math library + try/catch
-    if a<0:
-        raise ValueError("A must be larger than or equal to 0")
-    if a!=1:
-        raise ValueError("A cannot equal 1")
-    if b == 0:
-        raise ValueError("Undefined")
-    return math.log(a,b)
+    try:
+        if a<0:
+            raise ValueError("A must be larger than or equal to 0")
+        if a==1:
+            raise ValueError("A cannot equal 1")
+        if b == 0:
+            raise ValueError("Undefined")
+        return math.log(a, b)
+    except ValueError as e:
+        print(f"Error: {e}")
+
+
 
