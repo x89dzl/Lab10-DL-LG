@@ -35,10 +35,11 @@ def subtract(a, b):
     return a - b
 
 def logarithm(a, b): # use math library + try/catch
-    try:
-        math.log(a,b)
-    except a>=0:
+    if a<0:
         raise ValueError("A must be larger than or equal to 0")
-    except a!=1:
+    if a!=1:
         raise ValueError("A cannot equal 1")
-    '''except b=1:'''
+    if b == 0:
+        raise ValueError("Undefined")
+    return math.log(a,b)
+

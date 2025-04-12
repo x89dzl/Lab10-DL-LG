@@ -30,10 +30,12 @@ class TestCalculator(unittest.TestCase):
 
     # Partner 2
     def test_divide_by_zero(self): # 1 assertion
-        self.assertRaises(div(0, 5),ZeroDivisionError)
+        self.assertRaises(div(5, 0),ZeroDivisionError)
 
     def test_logarithm(self): # 3 assertions
-        self.assertEqual(logarithm(math.e, 1), 0)
+        self.assertEqual(logarithm(-4, 1), ValueError("A must be larger than or equal to 0"))
+        self.assertEqual(logarithm(1, 4), ValueError("A cannot equal 1"))
+        self.assertEqual(logarithm(10, 0), ValueError("Undefined"))
 
     def test_log_invalid_base(self): # 1 assertion
         self.assertRaises(logarithm(0,-1), ValueError("A must be larger than or equal to 0"))
@@ -44,15 +46,17 @@ class TestCalculator(unittest.TestCase):
         self.assertRaises(logarithm(5, 8),ValueError("A cannot equal 0"))
 
     def test_hypotenuse(self): # 3 assertions
-        pass
-
+        self.assertRaises()
+        self.assertRaises()
+        self.assertRaises()
     def test_sqrt(self): # 3 assertions
         # Test for invalid argument, example:
         # with self.assertRaises(<INSERT_ERROR_TYPE>):
         # square_root(NUM)
         # Test basic function
         self.assertRaises(square_root(-9),ValueError("A cannot be smaller than 0"))
-
+        self.assertEqual()
+        self.assertEqual()
 ##########################
 # Do not touch this
 if __name__ == "__main__":
