@@ -45,6 +45,7 @@ def logarithm(a, b): # use math library + try/catch
         return math.log(b, a)
     except ValueError as e:
         print(f"Error: {e}")
+        raise ValueError
         return None
 
 
