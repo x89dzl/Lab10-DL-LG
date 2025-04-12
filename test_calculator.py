@@ -1,7 +1,6 @@
 '''https://github.com/x89dzl/Lab10-DL-LG
 Daniel Li Liam Gale'''
 import unittest
-import math
 from calculator import *
 
 class TestCalculator(unittest.TestCase):
@@ -33,9 +32,9 @@ class TestCalculator(unittest.TestCase):
     def test_divide_by_zero(self): # 1 assertion
         self.assertEqual(div(0, 5),"Error cannot divide by 0")
     def test_logarithm(self): # 3 assertions
-        self.assertEqual(logarithm(math.e,1),0)
+        self.assertEqual(logarithm(4,1),0)
         self.assertEqual(logarithm(10,1),0)
-        self.assertEqual(logarithm(math.e,math.e),1)
+        self.assertEqual(logarithm(9,9),1)
     def test_log_invalid_base(self): # 1 assertion
         with self.assertRaises(ValueError):
             logarithm(-1,5)
