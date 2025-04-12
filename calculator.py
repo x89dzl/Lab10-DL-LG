@@ -36,11 +36,11 @@ def subtract(a, b):
 
 def logarithm(a, b): # use math library + try/catch
     try:
-        if a<0:
+        if a<=0:
             raise ValueError("A must be larger than or equal to 0")
         if a==1:
             raise ValueError("A cannot equal 1")
-        if b <= 0:
+        if b < 0:
             raise ValueError("Argument cannot be equal to or less than 0 ")
         return math.log(b, a)
     except ValueError as e:
