@@ -42,7 +42,7 @@ def logarithm(a, b): # use math library + try/catch
             raise ValueError("A cannot equal 1")
         if b <= 0:
             raise ValueError("Argument cannot be equal to or less than 0 ")
-        return math.log(a, b)
+        return math.log(b, a)
     except ValueError as e:
         print(f"Error: {e}")
         return None
