@@ -36,11 +36,11 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(logarithm(10,1),0)
         self.assertEqual(logarithm(math.e,math.e),1)
     def test_log_invalid_base(self): # 1 assertion
-        self.assertRaises(logarithm(-1,5), ValueError("A must be larger than or equal to 0"))
+        self.assertRaises(logarithm(-1,5), ValueError)
     ##########################
     # Partner 1
     def test_log_invalid_argument(self): # 1 assertion
-        self.assertRaises(logarithm(5, 0),ValueError("Undefined"))
+        self.assertRaises(logarithm(5, 0),ValueError)
     def test_hypotenuse(self): # 3 assertions
         self.assertAlmostEqual(hypotenuse(2,2),4)
         self.assertAlmostEqual(hypotenuse(-2,-2),4)
@@ -50,7 +50,7 @@ class TestCalculator(unittest.TestCase):
         # with self.assertRaises(<INSERT_ERROR_TYPE>):
         # square_root(NUM)
         # Test basic function
-        self.assertRaises(square_root(-9),ValueError("A cannot be smaller than 0"))
+        self.assertRaises(square_root(-9),ValueError)
         self.assertEqual(square_root((math.e)**2),math.e)
         self.assertEqual(square_root(9),3)
 ##########################
