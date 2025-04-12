@@ -32,7 +32,7 @@ class TestCalculator(unittest.TestCase):
     def test_divide_by_zero(self): # 1 assertion
         self.assertEqual(div(0, 5),"Error cannot divide by 0")
     def test_logarithm(self): # 3 assertions
-        self.assertAlmostEqual(logarithm(math.e,1),0)
+        self.assertAlmostEqual(logarithm(math.e,0),1)
         self.assertEqual(logarithm(10,1),0)
         self.assertEqual(logarithm(math.e,math.e),1)
     def test_log_invalid_base(self): # 1 assertion
@@ -50,7 +50,7 @@ class TestCalculator(unittest.TestCase):
         # with self.assertRaises(<INSERT_ERROR_TYPE>):
         # square_root(NUM)
         # Test basic function
-        self.assertRaises(square_root(-9),ValueError)
+        self.assertRaises(square_root(-9),ValueError ("A cannot be smaller than 0"))
         self.assertEqual(square_root((math.e)**2),math.e)
         self.assertEqual(square_root(9),3)
 ##########################
