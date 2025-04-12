@@ -22,8 +22,8 @@ def mul(a, b):
     return a * b
 
 def div(a, b):
-    if b == 0:
-        print("Error cannot divide by 0")
+    if a == 0:
+        return "Error cannot divide by 0"
     return b / a
 
 def exp(a, b):
@@ -36,12 +36,12 @@ def subtract(a, b):
 
 def logarithm(a, b): # use math library + try/catch
     try:
-        if a<0:
+        if a<=0:
             raise ValueError("A must be larger than or equal to 0")
         if a==1:
             raise ValueError("A cannot equal 1")
-        if b == 0:
-            raise ValueError("Undefined")
+        if b <= 0:
+            raise ValueError("Argument cannot be equal to or less than 0 ")
         return math.log(a, b)
     except ValueError as e:
         print(f"Error: {e}")

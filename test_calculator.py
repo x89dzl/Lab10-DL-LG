@@ -1,6 +1,7 @@
 '''https://github.com/x89dzl/Lab10-DL-LG
 Daniel Li Liam Gale'''
 import unittest
+import math
 from calculator import *
 
 class TestCalculator(unittest.TestCase):
@@ -36,11 +37,13 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(logarithm(10,1),0)
         self.assertEqual(logarithm(math.e,math.e),1)
     def test_log_invalid_base(self): # 1 assertion
-        self.assertRaises(logarithm(-1,5), ValueError)
+        with self.assertRaises(ValueError):
+            logarithm(-1,5)
     ##########################
     # Partner 1
     def test_log_invalid_argument(self): # 1 assertion
-        self.assertRaises(logarithm(5, 0),ValueError)
+        with self.assertRaises(ValueError):
+            logarithm(5,0)
     def test_hypotenuse(self): # 3 assertions
         self.assertAlmostEqual(hypotenuse(3,4),5)
         self.assertAlmostEqual(hypotenuse(-3,-4),5)
@@ -50,7 +53,8 @@ class TestCalculator(unittest.TestCase):
         # with self.assertRaises(<INSERT_ERROR_TYPE>):
         # square_root(NUM)
         # Test basic function
-        self.assertRaises(square_root(-9),ValueError ("A cannot be smaller than 0"))
+        with self.assertRaises(ValueError):
+            square_root(-9)
         self.assertEqual(square_root((math.e)**2),math.e)
         self.assertEqual(square_root(9),3)
 ##########################
