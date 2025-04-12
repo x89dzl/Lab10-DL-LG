@@ -37,12 +37,12 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(logarithm(9,9),1)
     def test_log_invalid_base(self): # 1 assertion
         with self.assertRaises(ValueError):
-            logarithm(-1,5)
+            logarithm(5,-1)
     ##########################
     # Partner 1
     def test_log_invalid_argument(self): # 1 assertion
         with self.assertRaises(ValueError):
-            logarithm(5,0)
+            logarithm(0,5)
     def test_hypotenuse(self): # 3 assertions
         self.assertAlmostEqual(hypotenuse(3,4),5)
         self.assertAlmostEqual(hypotenuse(-3,-4),5)
